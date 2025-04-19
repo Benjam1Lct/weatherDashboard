@@ -5,7 +5,7 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: http://fgg0sws8gkkg0k0swckko8so.176.189.239.178.sslip.io/api
+        VITE_API_URL: https://weather-dashboard-back.benjamin-lecomte.com/api
     depends_on:
       - backend
 
