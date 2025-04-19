@@ -16,7 +16,5 @@ services:
       context: ./backend
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend/userBD.db:/app/userBD.db
     env_file:
       - ./backend/.env
