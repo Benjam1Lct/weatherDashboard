@@ -8,6 +8,8 @@ services:
         VITE_API_URL: http://backend:3001/api
     ports:
       - "80:80"
+    depends_on:
+      - backend
 
   backend:
     build:
@@ -16,3 +18,5 @@ services:
       - "3001:3001"
     volumes:
       - ./backend/userBD.db:/app/userBD.db
+    env_file:
+      - ./backend/.env
