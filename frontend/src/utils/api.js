@@ -1,5 +1,5 @@
 // 🌍 API de base (adaptable en fonction de l’environnement)
-const API_URL = '/api'; // ou 'http://localhost:3001/api' si pas de proxy Vite
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 // 📅 Prévisions météo sur plusieurs jours (lat/lon = coordonnées GPS)
 export const fetchForecast = async (lat, lon) => {
