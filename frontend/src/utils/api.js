@@ -3,19 +3,19 @@ const API_URL = '/api'; // ou 'http://localhost:3001/api' si pas de proxy Vite
 
 // 📅 Prévisions météo sur plusieurs jours (lat/lon = coordonnées GPS)
 export const fetchForecast = async (lat, lon) => {
-    const res = await fetch(`/api/weather/forecast?lat=${lat}&lon=${lon}`);
+    const res = await fetch(`${API_URL}/weather/forecast?lat=${lat}&lon=${lon}`);
     return (await res.json());
   };
   
 // 🌤️ Météo actuelle à un endroit donné
 export const fetchWeather = async (lat, lon) => {
-  const res = await fetch(`/api/weather/current?lat=${lat}&lon=${lon}`);
+  const res = await fetch(`${API_URL}/weather/current?lat=${lat}&lon=${lon}`);
   return (await res.json());
 };
 
 // 📍 Rechercher des villes à partir d’un préfixe de nom
 export const fetchCities = async (input) => {
-  const res = await fetch(`/api/geo/cities?namePrefix=${input}`);
+  const res = await fetch(`${API_URL}/geo/cities?namePrefix=${input}`);
   return await res.json();
 };
   
