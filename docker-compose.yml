@@ -5,16 +5,16 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: https://weather-dashboard-back.benjamin-lecomte.com/api
+        VITE_API_URL: http://localhost:65185/api
     depends_on:
       - backend
     ports:
-      - "80:3000" # 3000 = port interne du conteneur (Vite/React), 80 = exposé à l'extérieur
+      - "65184:3000" # 3000 = port interne (Vite), 65184 = exposé
 
   backend:
     build:
       context: ./backend
     ports:
-      - "8080:3001" # 3001 = port interne du backend, 8080 = exposé à l'extérieur
+      - "65185:3001" # 3001 = port backend interne, 65185 = exposé
     env_file:
       - ./backend/.env
