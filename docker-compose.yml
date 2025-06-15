@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "65184:3000" # 3000 = port interne (Vite), 65184 = exposé
+      - "65184:80" # 3000 = port interne (Vite), 65184 = exposé
 
   backend:
     build:
