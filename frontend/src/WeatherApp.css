@@ -733,7 +733,7 @@
   }
 }
 
-@media (min-height: 700px) {
+@media (max-height: 700px) {
   .bento-header {
     margin-top: 2rem;
     scale: 0.65;
