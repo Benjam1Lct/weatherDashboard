@@ -1,6 +1,15 @@
-version: '3.8'
+version: '2.4'
 
 services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "65185:3001"
+    env_file:
+      - ./backend/.env
+    mem_limit: 128m
+
   frontend:
     build:
       context: ./frontend
@@ -9,13 +18,4 @@ services:
     depends_on:
       - backend
     ports:
-      - "65184:80" # 3000 = port interne (Vite), 65184 = exposé
-
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "65185:3001"
-    env_file:
-      - ./backend/.env
-    mem_limit: 1024m
+      - "65184:80"
