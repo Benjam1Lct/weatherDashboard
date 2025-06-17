@@ -15,6 +15,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "65185:3001" # 3001 = port backend interne, 65185 = exposé
+      - "65185:3001"
     env_file:
       - ./backend/.env
+    mem_limit: 1024m
